@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  year: 1
+  category_id: 1
+  from_date: 2013-06-28
+  to_date: 2013-06-28
+  venue_id: 1
+  prize: 1.5
+  website: MyString
+  image: MyString
+
+two:
+  name: MyString
+  year: 1
+  category_id: 1
+  from_date: 2013-06-28
+  to_date: 2013-06-28
+  venue_id: 1
+  prize: 1.5
+  website: MyString
+  image: MyString

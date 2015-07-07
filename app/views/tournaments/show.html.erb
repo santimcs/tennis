@@ -1,0 +1,66 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_tournament_path %></li>
+<li><%= link_to 'Edit', edit_tournament_path(@tournament) %></li>
+<li><%= link_to 'Back', tournaments_path %></li>
+<li><%= link_to 'Destroy', @tournament, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% end %>
+<%= currently_at 'Tournaments'%>
+
+<p>
+  <b>Name:</b>
+  <%= @tournament.name %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @tournament.year %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @tournament.category.name %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @tournament.category.points %>
+</p>
+<p>
+  <b>From date:</b>
+  <%= @tournament.from_date %>
+</p>
+
+<p>
+  <b>To date:</b>
+  <%= @tournament.to_date %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @tournament.venue.name %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @tournament.venue.city %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @tournament.venue.country.name %>
+</p>
+<p>
+  <b>Prize:</b>
+  <%= @tournament.prize %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @tournament.website %>
+</p>
+
+<p>
+  <b>Image:</b>
+      <%= image_tag @tournament.image_url.to_s %>
+</p>
+

@@ -1,0 +1,45 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_result_path %></li>
+<% end %>
+<%= currently_at 'Results'%>
+
+<h1>Listing results</h1>
+
+<table id='Results' class="display">
+<thead>	
+  <tr>
+    <th>Seq</th>  	
+    <th>Tournament</th> 
+    <th>Round</th>
+    <th>Player</th>
+    <th>Opponent</th>
+    <th>Set 1</th>
+    <th>Set 2</th>
+    <th>Set 3</th> 
+    <th>Set 4</th>
+    <th>Set 5</th>        
+    <th>Date</th>
+    <th>Sex</th>   
+  </tr>
+</thead>
+<tbody>
+<% @results.each do |result| %>
+  <tr>
+    <td><%= result.sequence %></td>  	
+    <td ><%= link_to(result.tournament.name + '-' + result.tournament.year.to_s, result) %></td>    
+    <td><%= result.round.abbr %></td>
+    <td><%= result.player.first_name + ' ' +  result.player.last_name %></td>
+    <td><%= result.opponent.first_name + ' ' +  result.opponent.last_name %></td>
+    <td><%= result.set1p.to_s + ' - ' +  result.set1o.to_s %></td>
+    <td><%= result.set2p.to_s + ' - ' +  result.set2o.to_s %></td>
+    <td><%= result.set3p.to_s + ' - ' +  result.set3o.to_s %></td>   
+    <td><%= result.set4p.to_s + ' - ' +  result.set4o.to_s %></td>
+    <td><%= result.set5p.to_s + ' - ' +  result.set5o.to_s %></td>      
+    <td><%= result.date %></td>
+    <td><%= result.player.gender %></td>    
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />

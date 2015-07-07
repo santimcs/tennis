@@ -1,0 +1,14 @@
+<% content_for :main_navigation do %>
+  <nav id="main_nav" role="navigation">
+    <ul>
+
+      <%= nav_tab 'Home',    root_path,    current: current_tab %>
+      <%= nav_tab 'Players', players_path, current: current_tab %> 
+	  <%= nav_tab 'Results', results_path, current: current_tab %>      
+      <%= nav_tab 'Tournaments', tournaments_path, current: current_tab %>      
+      <%# nav_tab 'Venues', venues_path, current: current_tab %>
+      <%# nav_tab 'Categories', categories_path, current: current_tab %>
+
+    </ul>
+  </nav>
+<% end %>

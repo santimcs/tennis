@@ -1,0 +1,62 @@
+ol, ul {
+list-style : none;
+}
+
+.clearfix {
+display : inline-block;
+}
+
+.player-bio {
+color : #fff;
+background : #172137;
+padding : 20px 30px 30px 30px;
+width : 580px;
+}
+.player-bio h1 {
+color : #fff;
+font-size : 2.4em;
+}
+.player-bio .meta {
+float : left;
+width : 450px;
+}
+.player-bio .meta .playerImage {
+width : 160px;
+float : left;
+}
+.player-bio .meta ul {
+float : left;
+margin-left : 20px;
+width : 250px;
+}
+.player-bio .meta ul li {
+font-size : 1.2em;
+margin-bottom : 17px;
+}
+.player-bio .side {
+float : right;
+width : 110px;
+}
+.player-bio .side .box {
+width : 95px;
+padding : 10px;
+background : #464d60;
+color : #fff;
+text-align : center;
+margin-bottom : 20px;
+font-size : 1.2em;
+overflow-wrap : break-word;
+}
+.player-bio .side .box.ranking h1 {
+margin-bottom : 10px;
+font-weight : bold;
+}
+
+
+
+
+
+
+
+
+

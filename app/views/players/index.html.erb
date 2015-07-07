@@ -1,0 +1,44 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_player_path %></li>
+<% end %>
+<%= currently_at 'Players'%>
+
+<h1>Listing players</h1>
+
+
+<table id="Players" class="display">
+<thead>	
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Flag</th>    
+    <th>Country</th>
+    <th>Age</th>
+    <th>Height</th>
+    <th>Gender</th>
+
+    <th>Image</th>
+
+  </tr>
+</thead>
+<tbody>
+
+<% @players.each do |player| %>
+  <tr>
+    <td><%= player.rank %></td>  	
+    <td><%= link_to(player.first_name + ' ' + player.last_name, player) %></td>
+    <td><%= image_tag player.country.image_url.to_s %></td>    
+    <td><%= player.country.name %></td>
+    <td><%= BirthdateToAge(player.birthdate) %></td>
+    <td><%= '%.2f' % player.height %></td>
+    <td><%= player.gender %></td>
+
+    <td><img width="40" height="60" <%= image_tag player.image_url.to_s %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Player', new_player_path %>

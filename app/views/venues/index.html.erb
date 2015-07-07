@@ -1,0 +1,33 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_venue_path %></li>
+<% end %>
+<%= currently_at 'Venues'%>
+
+<h1>Listing venues</h1>
+
+<table id="Venues">
+<thead>	
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>Surface</th>
+    <th>Image</th>
+  </tr>
+</thead>
+<tbody>
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= link_to(venue.name, venue) %></td>
+    <td><%= venue.country.name %></td>
+    <td><%= venue.city %></td>
+    <td><%= venue.surface %></td>
+    <td><%= image_tag venue.image_url.to_s %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+

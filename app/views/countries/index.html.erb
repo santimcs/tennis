@@ -1,0 +1,30 @@
+<h1>Listing countries</h1>
+
+<table id="countries" class="display">
+<thead>	
+  <tr>
+    <th>Alpha2</th>
+    <th>Alpha3</th>
+    <th>Num3</th>
+    <th>Name</th>
+    <th>Image</th>
+
+  </tr>
+<thead>
+<tbody>	
+<% @countries.each do |country| %>
+  <tr>
+    <td><%= country.alpha2 %></td>
+    <td><%= link_to(country.alpha3, country) %></td>
+    <td><%= country.num3 %></td>
+    <td><%= country.name %></td>
+    <td><%= image_tag country.image_url.to_s %></td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Country', new_country_path %>

@@ -1,0 +1,45 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_tournament_path %></li>
+<% end %>
+<%= currently_at 'Tournaments'%>
+
+<h1>Listing tournaments</h1>
+
+<table id="tournaments" class="display">
+<thead>
+  <tr>
+    <td>Name</td>
+    <th>Year</th>
+    <th>Category</th>
+    <th>From date</th>
+    <th>To date</th>
+    <th>Venue Name</th>
+    <th>City</th>    
+    <th>Country</th>   
+    <th>Prize</th>
+
+    <th>Image</th>
+  </tr>
+</thead>
+<tbodyS>
+<% @tournaments.each do |tournament| %>
+  <tr>
+    <td><%= link_to(tournament.name, tournament) %></td>
+    <td><%= tournament.year %></td>
+    <td><%= tournament.category.name %></td>
+    <td><%= tournament.from_date %></td>
+    <td><%= tournament.to_date %></td>
+    <td><%= tournament.venue.name %></td>
+    <td><%= tournament.venue.city %></td>
+    <td><%= tournament.venue.country.name %></td>    
+    <td><%= tournament.prize %></td>
+
+    <td><img width="40" height="60" <%= image_tag tournament.image_url.to_s %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Tournament', new_tournament_path %>

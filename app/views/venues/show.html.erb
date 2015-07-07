@@ -1,0 +1,36 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_venue_path %></li>
+<li><%= link_to 'Edit', edit_venue_path(@venue) %></li>
+<li><%= link_to 'Back', venues_path %></li>
+<li><%= link_to 'Destroy', @venue, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% end %>
+<%= currently_at 'Venues'%>
+
+
+<p>
+  <b>Name:</b>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @venue.country.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @venue.city %>
+</p>
+
+<p>
+  <b>Surface:</b>
+  <%= @venue.surface %>
+</p>
+
+<p>
+  <b>Image:</b>
+      <%= image_tag @venue.image_url.to_s %>
+</p>
+
+
+

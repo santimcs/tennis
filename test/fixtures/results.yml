@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tournament_id: 1
+  round_id: 1
+  player_id: 1
+  opponent_id: 1
+  set1p: 1
+  set1o: 1
+  date: 2013-06-30
+  comment: MyText
+
+two:
+  tournament_id: 1
+  round_id: 1
+  player_id: 1
+  opponent_id: 1
+  set1p: 1
+  set1o: 1
+  date: 2013-06-30
+  comment: MyText

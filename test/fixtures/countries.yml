@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alpha2: MyString
+  alpha3: MyString
+  num3: 1
+  name: MyString
+  image: MyString
+
+two:
+  alpha2: MyString
+  alpha3: MyString
+  num3: 1
+  name: MyString
+  image: MyString

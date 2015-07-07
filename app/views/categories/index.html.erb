@@ -1,0 +1,25 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_category_path %></li>
+<% end %>
+<%= currently_at 'Categories'%>
+
+<h1>Listing categories</h1>
+
+<table id="Categories">
+  <tr>
+    <th>Name</th>
+    <th>Points</th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= link_to(category.name, category) %></td>  
+    <td><%= category.points %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

@@ -1,0 +1,61 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_player_path %></li>
+<li><%= link_to 'Edit', edit_player_path(@player) %></li>
+<li><%= link_to 'Back', players_path %></li>
+<li><%= link_to 'Destroy', @player, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+<% end %>
+<%= currently_at 'Players'%>
+
+<html>
+<head>
+<title>Untitled</title>
+
+</head>
+<body>
+
+<div class="player-bio clearfix">
+	
+    <div class="meta">
+        <h1 class="header-2"><%= @player.first_name + ' ' + @player.last_name.upcase %> </h1>
+		<div class="playerImage"><%= image_tag @player.image_url.to_s %></div>
+		<br />
+		<br />
+			<ul>
+				<li><strong>Country:   </strong><%= @player.country.name.titleize %></li>
+          		<li><strong>Date of Birth:   </strong><%= @player.birthdate.to_formatted_s(:long) %></li>
+				<li><strong>Age:   </strong><%= BirthdateToAge(@player.birthdate) %></li>
+				<li><strong>Height:   </strong><%= '%.2f' % @player.height %> metres</li>									
+			</ul>
+	</div>	
+		
+	<div class="side">
+			
+        <div class="box ranking">
+        	<br />
+        	<br />        	
+            <h1 class="header-2"><%= @player.rank %></h1>
+            Singles Ranking
+        </div>
+
+    	<div class="box">
+    		<div class="playerImage"><%= image_tag @player.country.image_url.to_s %></div>
+			<%= @player.country.name.titleize %>
+    	</div>
+        	
+    </div>
+
+</div>							
+
+			
+</br>
+</body>
+</html>
+
+
+
+
+
+
+
+

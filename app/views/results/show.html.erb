@@ -1,0 +1,73 @@
+<% content_for :functional_nav do%>
+<li><%= link_to 'Add', new_result_path %></li>
+<li><%= link_to 'Edit', edit_result_path(@result) %></li>
+<li><%= link_to 'Back', results_path %></li>
+<li><%= link_to 'Destroy', @result, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+<% end %>
+<%= currently_at 'Results'%>
+
+<div class="wrapper">
+	<div class="header">
+		<h1><%= @result.tournament.name + ' ' + @result.tournament.year.to_s %></h1>
+	</div>
+	<div class="subnav">
+		<div class="image">		
+			<%= image_tag @result.player.image_url.to_s ,height: '200', width: '150'  %>
+			<%= image_tag @result.player.country.image_url.to_s %>
+			<h3><%= @result.player.country.name.titleize %></h3>
+			<h1><%= link_to(@result.player.full_name.titleize, player_path(@result.player_id)) %></h1>
+		</div>	
+	</div>	
+	<div class="article">	
+		<div data-event="LS" class="scoringtable">
+			<div class="courtinfo">
+				<div class="courtname"><%= @result.round.name %></div>
+		  	</div>
+		    <div id="crtcontent">
+				<div class="crtrow teamOne">
+					<div class="name singles"><%= @result.player.first_name.first+'.'+@result.player.last_name %><span> (<%= @result.player.country.alpha3 %>) [<%= @result.player.rank %>]</span></div>
+					<div class="crticon"></div>
+					<div class="crtpts"></div>
+					<div class="crtset"><span class="set1"><%= @result.set1p %></span></div>
+					<div class="crtset"><span class="set2"><%= @result.set2p %></span></div>
+					<div class="crtset"><span class="set3"><%= @result.set3p %></span></div>
+					<div class="crtset"><span class="set4"><%= @result.set4p %></span></div>
+					<div class="crtset five"><span class="set5"><%= @result.set5p %></span></div>
+			    </div>
+			    <div class="status"></div>
+			    <div class="setheaders">
+					<div class="crtpts">POINTS</div>
+					<div class="crtset">1</div>
+					<div class="crtset">2</div>
+					<div class="crtset">3</div>
+					<div class="crtset">4</div>
+					<div class="crtset five">5</div>
+			    </div>
+			    <div class="crtrow teamTwo">
+					<div class="name singles"><%= @result.opponent.first_name.first+'.'+@result.opponent.last_name %><span> (<%= @result.opponent.country.alpha3 %>) [<%= @result.opponent.rank %>]</span></div>
+					<div class="crticon winner"></div>
+					<div class="crtpts"></div>
+					<div class="crtset"><span class="set1"><%= @result.set1o %></span></div>
+					<div class="crtset"><span class="set2"><%= @result.set2o %></span></div>
+					<div class="crtset"><span class="set3"><%= @result.set3o %></span></div>
+					<div class="crtset"><span class="set4"><%= @result.set4o %></span></div>
+					<div class="crtset five"><span class="set5"><%= @result.set5o %></span></div>
+			    </div>
+		    </div>
+	    </div>
+ 	</div>		  
+	<div class="aside">
+		<%= image_tag @result.opponent.image_url.to_s ,height: '200', width: '150' %>
+		<%= image_tag @result.opponent.country.image_url.to_s %>
+		<h3><%= @result.opponent.country.name.titleize %></h3>
+		<h1><%= link_to(@result.opponent.full_name.titleize, player_path(@result.opponent_id)) %></h1>		
+    </div>
+</div>
+<div class="footer">
+	<p>
+    	<b>Date:</b>
+    	<%= @result.date %>
+    </p>
+</div>
+
