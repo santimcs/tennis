@@ -21,7 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'carrierwave'
-gem 'rake', '0.9.2.2'
+gem 'rake'
 gem 'jquery-rails'
 gem 'coffee-script-source', '1.8.0'
 
