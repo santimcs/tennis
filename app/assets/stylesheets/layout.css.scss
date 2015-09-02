@@ -1,13 +1,11 @@
 header#page_header {
-  /* START_HIGHLIGHT */
-  background: #bc471d url('/assets/brandtag.png') bottom right no-repeat;
-  /* END_HIGHLIGHT */
-  color: #fff;
+  background: rgba(0,0,0,0) url('/assets/uso_nv_00000g1.png') bottom center no-repeat;
+  /* color: #fff; */
   font-size: 0.9em;
-  height: 68px;
-  margin-bottom: 10px;
+  height: 100px;
+  /* margin-bottom: 10px; */
   overflow: hidden;
-  padding: 10px 20px;
+   padding: 10px 20px; 
 
   a,
   a:link,
@@ -25,16 +23,15 @@ header#page_header {
 
   #logo {
     position: absolute;
-    top: 15px;
+    top: 30px;
+    left: 149px; 
+    width: 134px; 
+    height: 78px; 
+    margin: 0px; 
+    padding: 0px;
   }
 
 }
-
-#tagline {
-  margin-left: 20px;
-}
-
-
 
 div.container {
   overflow: hidden;
@@ -45,7 +42,7 @@ div.container {
 /* START:footer */
 footer#page_footer {
   float: bottom;
-  background-color: #bc471d;
+  background-color: #004b85;
   border-top: 10px solid #4c2719;  
   border-bottom: 10px solid #4c2719;
   color: #fff;

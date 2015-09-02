@@ -14,8 +14,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/header' %>
-<img width="66" height="66" <%= image_tag("Wimbledon.png", alt: "Tennis", id: "tagline") %>
+  <header id="page_header" role="banner">
+
+    <%= link_to(
+          image_tag("usopen_logo.png",
+                    alt: "Artflow",
+                    id: "logo"),
+          root_url,
+          title: "Dashboard") %>
+   <%= yield :main_navigation %>
+  </header>
+<%#= image_tag("uso_nv.png", alt: "Tennis", id: "tagline") %>  
+<%#= image_tag("usopen_logo.png", alt: "Tennis", id: "tagline") %>
   <div class="container">
     <section id="content">
       <%# START:notifications %>
